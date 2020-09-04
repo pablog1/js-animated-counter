@@ -6,4 +6,3 @@ Each counters group starts when it becommes visible<br>
 Optional configurable speed for each counter<br>
 Very easy to implement<br>
 Jquery is required<br>
-Scroll down to see more..
