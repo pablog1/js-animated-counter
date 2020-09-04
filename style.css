@@ -1,0 +1,17 @@
+nav.sticky {
+  background-color: #969600d9 !important;
+  position: fixed;
+  width: 100%;
+  top: -50px;
+  height: 50px;
+}
+
+.sticky-text {
+  font-size: 15px;
+  display: none;
+}
+
+.sticky-text p {
+  margin: 0;
+}
+/*# sourceMappingURL=style.css.map */
