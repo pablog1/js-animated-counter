@@ -4,9 +4,11 @@ $(function () {
 
     /* Usage example
         <div class= "counters_2">
-            <div class="counter" dataTargetNum="4200" dataTargetSpeed="1000">0</div>
-            <div class="counter" dataTargetNum="4500" dataTargetSpeed="4000">0</div>
-            <div class="counter" dataTargetNum="4743">0</div>
+        <div class="counters_1">
+            <div class="counter" dataTargetNum="7323" dataTargetSpeed="2000">0</div>
+            <div class="counter" dataTargetNum="50" dataTargetSpeed="5000" dataTargetDirection="reverse">50</div>
+            <div class="counter" dataTargetNum="80333" dataTargetSpeed="2500">0</div>
+        </div>
         </div>
 
         <div class= "counters_3">
@@ -58,18 +60,19 @@ $(function () {
     }
 
     function counter_init(groupClass) {
-        let num, speed;
+        let num, speed, direction;
 
         $(counterClass).each(function () {
             num = $(this).attr('dataTargetNum');
             speed = $(this).attr('dataTargetSpeed');
+            direction = $(this).attr('dataTargetDirection');
             if (speed == undefined) speed = defaultSpeed;
             $(this).addClass(num); //add a class to recognize each counter
-            doCount(num, speed, groupClass);
+            doCount(num, speed, groupClass, direction);
         });
     }
 
-    function doCount(num, speed, groupClass) {
+    function doCount(num, speed, groupClass, direction) {
         let className = groupClass + ' ' + counterClass + '.' + num;
         $(className).animate({
             num
@@ -77,7 +80,11 @@ $(function () {
             duration: +speed,
             easing: 'swing',
             step: function (now) {
-                $(this).text(Math.ceil(now));
+                if (direction == 'reverse') {
+                    $(this).text(num - Math.ceil(now));
+                } else {
+                    $(this).text(Math.ceil(now));
+                }
             },
             complete: doCount
         });
