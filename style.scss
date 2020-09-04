@@ -1,14 +1,32 @@
-nav.sticky {
-    background-color: #969600d9 !important;
-    position: fixed;
-    width: 100%;
-    top: -50px;
-    height: 50px;
+body{
+    background-color: #f1f1f1;
+    padding-top: 20px;
 }
-.sticky-text {
-    font-size: 15px;
-    display: none;
-    p {
-        margin: 0;
+
+h1{
+    text-align: center;
+    color: #39317d;
+}
+.description {
+    background-color:#6a5af3;
+    padding: 15px;
+    margin: 30px 0;
+    border-radius: 15px;
+    color: white;
+    p{
+        font-weight: 700;
     }
+}
+
+.counters_1, .counters_2, .counters_3{
+    display: flex;
+    justify-content: space-around;
+    padding: 33px;
+}
+
+.counter{
+    font-size: 44px;
+    font-weight: 600;
+    color: #7b2314;
+    width: 152px;
 }
