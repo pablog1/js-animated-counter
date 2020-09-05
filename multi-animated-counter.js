@@ -4,24 +4,24 @@ $(function () {
 
     /* Usage example
         <div id="counters_1">
-            <div ="counter" dataTargetNum="10" dataSpeed="6000"></div>
-            <div class="counter" dataTargetNum="7" dataSpeed="7000" 
-            dataDirection="reverse" dataEasing="linear"></div>
-            <div class="counter" dataTargetNum="80333" dataSpeed="2500">0</div>
+            <div ="counter" data-TargetNum="10" data-Speed="6000"></div>
+            <div class="counter" data-TargetNum="7" data-Speed="7000" 
+            data-Direction="reverse" data-Easing="linear"></div>
+            <div class="counter" data-TargetNum="80333" data-Speed="2500">0</div>
         </div>
         <div id="counters_2">
-            <div class="counter" dataTargetNum="4200" dataSpeed="1000">0</div>
-            <div class="counter" dataTargetNum="4500" dataSpeed="4000">0</div>
-            <div class="counter" dataTargetNum="4743">0</div>
+            <div class="counter" data-TargetNum="4200" data-Speed="1000">0</div>
+            <div class="counter" data-TargetNum="4500" data-Speed="4000">0</div>
+            <div class="counter" data-TargetNum="4743">0</div>
         </div>
         <div id="counters_3">
-            <div class="counter" dataTargetNum="5200" dataSpeed="1000">0</div>
-            <div class="counter" dataTargetNum="5500" dataSpeed="4000">0</div>
-            <div class="counter" dataTargetNum="5743">0</div>
+            <div class="counter" data-TargetNum="5200" data-Speed="1000">0</div>
+            <div class="counter" data-TargetNum="5500" data-Speed="4000">0</div>
+            <div class="counter" data-TargetNum="5743">0</div>
         </div>
     
-       Required attr: dataTargetNum
-       Optionals attr: dataSpeed(milisecons), dataDirection(reverse), dataEasing(linear, swing)
+       Required attr: data-TargetNum
+       Optionals attr: data-Speed(milisecons), data-Direction(reverse), data-Easing(linear, swing)
 
        **CONFIG**
        Please set a the ID's to watch, a class for all counters and a default speed
@@ -66,10 +66,10 @@ $(function () {
     function counter_init(groupId) {
         let num, speed, direction, index = 0;
         $(counterClass).each(function () {
-            num = $(this).attr('dataTargetNum');
-            speed = $(this).attr('dataSpeed');
-            direction = $(this).attr('dataDirection');
-            easing = $(this).attr('dataEasing');
+            num = $(this).attr('data-TargetNum');
+            speed = $(this).attr('data-Speed');
+            direction = $(this).attr('data-Direction');
+            easing = $(this).attr('data-Easing');
             if (speed == undefined) speed = defaultSpeed;
             $(this).addClass('c_' + index); //add a class to recognize each counter
             doCount(num, index, speed, groupId, direction, easing);
