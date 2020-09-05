@@ -3,24 +3,28 @@ $(function () {
     // ! Counter (used for Social Proof)
 
     /* Usage example
-        <div class= "counters_2">
         <div class="counters_1">
-            <div class="counter" dataTargetNum="7323" dataTargetSpeed="2000">0</div>
-            <div class="counter" dataTargetNum="50" dataTargetSpeed="5000" dataTargetDirection="reverse">50</div>
-            <div class="counter" dataTargetNum="80333" dataTargetSpeed="2500">0</div>
+            <div class="counter" dataTargetNum="10" dataSpeed="6000"></div>
+            <div class="counter" dataTargetNum="7" dataSpeed="7000" 
+            dataDirection="reverse" dataEasing="linear"></div>
+            <div class="counter" dataTargetNum="80333" dataSpeed="2500">0</div>
         </div>
+        <div class="counters_2">
+            <div class="counter" dataTargetNum="4200" dataSpeed="1000">0</div>
+            <div class="counter" dataTargetNum="4500" dataSpeed="4000">0</div>
+            <div class="counter" dataTargetNum="4743">0</div>
         </div>
-
-        <div class= "counters_3">
-            <div class="counter" dataTargetNum="5200" dataTargetSpeed="1000">0</div>
-            <div class="counter" dataTargetNum="5500" dataTargetSpeed="4000">0</div>
+        <div class="counters_3">
+            <div class="counter" dataTargetNum="5200" dataSpeed="1000">0</div>
+            <div class="counter" dataTargetNum="5500" dataSpeed="4000">0</div>
             <div class="counter" dataTargetNum="5743">0</div>
         </div>
     
-       (dataTargetSpeed is optional)
+       Required attr: dataTargetNum
+       Optionals attr: dataSpeed(milisecons), dataDirection(reverse), dataEasing(linear, swing)
 
-       Config
-       Please set a class to watch and a default duration
+       **CONFIG**å
+       Please set a class to watch, an other class for all counters and a default speed
 
        Avoid to use this script in pages where it isn't needed
     */
@@ -64,23 +68,24 @@ $(function () {
 
         $(counterClass).each(function () {
             num = $(this).attr('dataTargetNum');
-            speed = $(this).attr('dataTargetSpeed');
-            direction = $(this).attr('dataTargetDirection');
+            speed = $(this).attr('dataSpeed');
+            direction = $(this).attr('dataDirection');
+            easing = $(this).attr('dataEasing');
             if (speed == undefined) speed = defaultSpeed;
             $(this).addClass('c_' + index); //add a class to recognize each counter
-            doCount(num, index, speed, groupClass, direction);
+            doCount(num, index, speed, groupClass, direction, easing);
             index++;
         });
     }
 
-    function doCount(num, index, speed, groupClass, direction) {
+    function doCount(num, index, speed, groupClass, direction, easing) {
         let className = groupClass + ' ' + counterClass + '.' + 'c_' + index;
-
+        if(easing == undefined) easing = "swing";
         $(className).animate({
             num
         }, {
             duration: +speed,
-            easing: 'linear',
+            easing: easing,
             step: function (now) {
                 if (direction == 'reverse') {
                     $(this).text(num - Math.floor(now));
