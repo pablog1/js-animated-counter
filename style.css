@@ -20,7 +20,7 @@ h1 {
   font-weight: 700;
 }
 
-.counters_1, .counters_2, .counters_3 {
+#counters_1, #counters_2, #counters_3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
