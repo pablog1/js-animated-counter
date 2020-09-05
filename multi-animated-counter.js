@@ -60,30 +60,32 @@ $(function () {
     }
 
     function counter_init(groupClass) {
-        let num, speed, direction;
+        let num, speed, direction, index = 0;
 
         $(counterClass).each(function () {
             num = $(this).attr('dataTargetNum');
             speed = $(this).attr('dataTargetSpeed');
             direction = $(this).attr('dataTargetDirection');
             if (speed == undefined) speed = defaultSpeed;
-            $(this).addClass(num); //add a class to recognize each counter
-            doCount(num, speed, groupClass, direction);
+            $(this).addClass('c_' + index); //add a class to recognize each counter
+            doCount(num, index, speed, groupClass, direction);
+            index++;
         });
     }
 
-    function doCount(num, speed, groupClass, direction) {
-        let className = groupClass + ' ' + counterClass + '.' + num;
+    function doCount(num, index, speed, groupClass, direction) {
+        let className = groupClass + ' ' + counterClass + '.' + 'c_' + index;
+
         $(className).animate({
             num
         }, {
             duration: +speed,
-            easing: 'swing',
+            easing: 'linear',
             step: function (now) {
                 if (direction == 'reverse') {
-                    $(this).text(num - Math.ceil(now));
+                    $(this).text(num - Math.floor(now));
                 } else {
-                    $(this).text(Math.ceil(now));
+                    $(this).text(Math.floor(now));
                 }
             },
             complete: doCount
