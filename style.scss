@@ -6,14 +6,25 @@ body {
     background: linear-gradient(40deg, #b12a5b, #ff8177);
 }
 
-h1 {
-    text-align: center;
-    color: #39317d;
+.title h1 {
+    text-align: left;
+    color: #353535;
+    font-size: 35px;
 }
 
 .hero {
     color: white;
     padding: 39px 5px;
+
+    a button{
+        font-size: 16px;
+        background-color: #1d55b9;
+        color: #e6e6e6;
+        padding: 7px;
+        border-radius: 9px;
+        border: 1px solid #505050;
+    }
+
 
     #counters_hero {
         display: flex;
