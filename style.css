@@ -3,9 +3,55 @@ body {
   padding-top: 20px;
 }
 
+.young-passion-gradient {
+  background: linear-gradient(40deg, #b12a5b, #ff8177);
+}
+
 h1 {
   text-align: center;
   color: #39317d;
+}
+
+.hero {
+  color: white;
+}
+
+.hero #counters_hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.hero #counters_hero .cont {
+  margin: auto;
+}
+
+.hero #counters_hero .cont .label {
+  text-align: center;
+  height: 49px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.circle {
+  width: 99px;
+  height: 99px;
+  background: #cfcfcfb9;
+  border-radius: 78px;
+  margin: auto;
+}
+
+.circle .counter {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  line-height: 4.6;
+  width: auto;
 }
 
 .description {
@@ -20,7 +66,9 @@ h1 {
   font-weight: 700;
 }
 
-#counters_1, #counters_2, #counters_3 {
+#counters_1,
+#counters_2,
+#counters_3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,30 +1,70 @@
-body{
+body {
     background-color: #f1f1f1;
     padding-top: 20px;
 }
+.young-passion-gradient {
+    background: linear-gradient(40deg, #b12a5b, #ff8177);
+}
 
-h1{
+h1 {
     text-align: center;
     color: #39317d;
 }
+
+.hero {
+    color: white;
+    #counters_hero {
+        display: flex;
+        justify-content: space-between;
+        vertical-align: middle;
+        height: 100%;
+        .cont {
+            margin: auto;
+            .label {
+                text-align: center;
+                height: 49px;
+                line-height: 1.4;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.circle {
+    width: 99px;
+    height: 99px;
+    background: #cfcfcfb9;
+    border-radius: 78px;
+    margin: auto;
+    .counter {
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        line-height: 4.6;
+        width: auto;
+    }
+}
+
 .description {
-    background-color:#6a5af3;
+    background-color: #6a5af3;
     padding: 15px;
     margin: 30px 0;
     border-radius: 15px;
     color: white;
-    p{
+    p {
         font-weight: 700;
     }
 }
 
-#counters_1, #counters_2, #counters_3{
+#counters_1,
+#counters_2,
+#counters_3 {
     display: flex;
     justify-content: space-around;
     padding: 33px;
 }
 
-.counter{
+.counter {
     font-size: 44px;
     font-weight: 600;
     color: #7b2314;

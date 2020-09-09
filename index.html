@@ -3,6 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Multi animated Counter</title>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
@@ -21,29 +22,73 @@
 <body>
 
 
-    <main role="main" class="container">
+    <main>
+        <div class="container">
+            <h1>Multi animated Counter</h1>
+        </div>
 
-        <h1>Multi animated Counter</h1>
-        
-        <div class = "description">
-            <p>
-            Javascript animated Counter:
-            </p>
-            <ul>
-                <li>Multiple instances</li>
-                <li>Each counters group starts when it becommes visible</li>
-                <li>Optional configurable speed for each counter</li>
-                <li>Reverse count available</li>
-                <li>Very easy to implement</li>
-                <li>Jquery is required</li>
-                <li>Scroll down to see more..</li>
-            </ul>
+        <div class="container-fluid young-passion-gradient">
+            <div class="container hero">
+                <div class="row">
+
+                    <div class="col-md">
+                        <p>
+                            Javascript animated Counter:
+                        </p>
+                        <ul>
+                            <li>Multiple instances</li>
+                            <li>Each counters group starts when it becommes visible</li>
+                            <li>Optional configurable speed for each counter</li>
+                            <li>Reverse count available</li>
+                            <li>Very easy to implement</li>
+                            <li>Jquery is required</li>
+                            <li>Scroll down to see more..</li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md">
+                        <div id="counters_hero">
+                            <div class="cont">
+                                <div class="label">
+                                    <p>Easy to implement</p>
+                                </div>
+                                <div class="circle">
+                                    <div class="counter" data-TargetNum="10000" data-Speed="4000">0</div>
+                                </div>
+                            </div> 
+                            <div class="cont">
+                                <div class="label">
+                                    <p>Configurable speed</p>
+                                </div>
+                                <div class="circle">
+                                    <div class="counter" data-TargetNum="5000" data-Speed="8000">0</div>
+                                </div>
+                            </div>
+                            <div class="cont">
+                                <div class="label">
+                                    <p>Timer function</p>
+                                </div>
+                                <div class="circle">
+                                    <div class="counter" data-TargetNum="100" data-Direction="reverse" data-Speed="6000">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="description">
+            Desc?
         </div>
 
         <div id="counters_1">
             <div class="counter" data-TargetNum="98765" data-Speed="7000"></div>
-            <div class="counter" data-TargetNum="7" data-Speed="7000" 
-            data-Direction="reverse" data-Easing="linear"></div>
+            <div class="counter" data-TargetNum="7" data-Speed="7000" data-Direction="reverse" data-Easing="linear">
+            </div>
             <div class="counter" data-TargetNum="80333" data-Speed="9000">0</div>
         </div>
 
